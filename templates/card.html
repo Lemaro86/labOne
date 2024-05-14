@@ -1,0 +1,20 @@
+{% load static %}
+
+{% block content %}
+    <div class="card">
+        <div class="media">
+            <img src="{% static card.img %}" class="image" alt="covid"/>
+        </div>
+        <div class="content">
+            <div class="content-top">
+                <p class="title">{{   card.title }}</p>
+                <p class="desc">{{ card.desc }}</p>
+            </div>
+            <div class="control">
+                <p class="cost"><b>{{ card.cost }}</b> ₽</p>
+                <a href="/page/{{ card.id }}" class="more">Подробнее</a>
+            </div>
+
+        </div>
+    </div>
+{% endblock %}
