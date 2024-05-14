@@ -1,9 +1,9 @@
 from django.shortcuts import render
-from bmstu_lab.models import Cards
+from bmstu_lab.models import Card
 
 
 def main_page(request):
-    card_items = Cards.objects.all()
+    card_items = Card.objects.all()
     return render(request, 'index.html', {'data': {
         'cards': card_items,
         'search': ''
@@ -12,9 +12,7 @@ def main_page(request):
 
 def send_text(request):
     input_text = request.POST['text']
-    filtered_data = Cards.objects.filter(title__contains=input_text)
-    print(input_text)
-    print(filtered_data)
+    filtered_data = Card.objects.filter(title__contains=input_text)
     return render(request, 'index.html', {'data': {
         'cards': filtered_data,
         'search': input_text
@@ -22,9 +20,10 @@ def send_text(request):
 
 
 def custom_page(request, id):
-    card_item = Cards.objects.get(pk=id)
+    card_item = Card.objects.get(pk=id)
     return render(request, 'page.html', {'data': card_item})
 
 
 def orders_page(request):
     return render(request, 'orders.html')
+
