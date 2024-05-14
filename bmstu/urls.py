@@ -20,9 +20,8 @@ from bmstu_lab import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.MainPage),
-    path('page/<int:id>', views.CustomPage),
-    path('orders', views.GetOrders),
-    path('order/<int:id>', views.GetOrder, name='order_url'),
-    path('sendText', views.sendText, name='sendText')
+    path('', views.main_page),
+    path('page/<int:id>', views.custom_page),
+    path('send_text', views.send_text, name='sendText'),
+    path('orders', views.orders_page),
 ]

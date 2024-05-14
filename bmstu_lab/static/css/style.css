@@ -21,6 +21,11 @@ body {
     padding: 0 20px;
 }
 
+.header a {
+    color: #fff;
+    text-decoration: none;
+}
+
 .header h1 {
     font-size: 12px;
     font-weight: normal;
@@ -141,4 +146,21 @@ body {
     font-size: 24px;
     font-weight: normal;
     margin-bottom: 16px;
+}
+
+.card-details {
+    height: 516px;
+}
+
+.details-title {
+    text-align: center;
+    font-size: 18px;
+    color: #2C1D89;
+    margin: 16px 0 32px;
+}
+
+.orders {
+    margin: 50px;
+    text-align: center;
+    font-size: 18px;
 }

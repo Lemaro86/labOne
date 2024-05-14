@@ -1,5 +1,6 @@
-<form action="sendText" method="post" enctype="multipart/form-data">
+<form action="send_text" method="post" enctype="multipart/form-data">
     {% csrf_token %}
-    <input name="text" type="text"><br><br>
-    <input type="submit" value="Submit" >
+    <div class="search">
+        <input type="text" name="text" value="{{ data.search }}" placeholder="Поиск инфекций и вредителей"/>
+    </div>
 </form>

@@ -1,8 +1,31 @@
 {% extends 'base.html' %}
 
+{% load static %}
+
 {% block content %}
     <div class="space">
         {% include 'header.html' %}
-        Page of insects has number: <b> {{ data.id }} </b>
+        
+        <h1 class="details-title">{{ data.title }}</h1>
+
+        <div class="card card-details">
+            <div class="media">
+                <img src="{% static data.img %}" class="image" alt="covid"/>
+            </div>
+            <div class="content">
+                <div class="content-top">
+                    <p class="title">{{ data.title }}</p>
+                    <p class="desc">{{ data.desc }}</p>
+                </div>
+                <div class="control">
+                    <p class="cost"><b>{{ data.cost }}</b> ₽</p>
+                    <a href="/page/{{ data.id }}" class="more">Подробнее</a>
+                </div>
+
+            </div>
+        </div>
+        <br/>
+        <br/>
+        Data.id: <b> {{ data.id }} </b>
     </div>
 {% endblock %}

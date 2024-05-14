@@ -1,3 +1,4 @@
 from django.contrib import admin
+from bmstu_lab.models import Cards
 
-# Register your models here.
+admin.site.register(Cards)

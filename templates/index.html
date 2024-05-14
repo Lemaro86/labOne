@@ -9,10 +9,7 @@
             <h2>Дэзстанция</h2>
 
             {% include 'search.html' %}
-
-            <div class="search">
-                <input type="text" value="" placeholder="Поиск инфекций и вредителей"/>
-            </div>
+        
             <div class="container">
                 {% for card in data.cards %}
                     {% include 'card.html' with element=card %}
