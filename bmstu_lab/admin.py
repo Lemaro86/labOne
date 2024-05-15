@@ -1,4 +1,4 @@
 from django.contrib import admin
-from bmstu_lab.models import Card
+from bmstu_lab.models import Service
 
-admin.site.register(Card)
+admin.site.register(Service)

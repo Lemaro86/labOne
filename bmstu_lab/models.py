@@ -1,19 +1,51 @@
-import uuid
-
 from django.db import models
 
 
-class Card(models.Model):
-    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+class Service(models.Model):
+    service_id = models.IntegerField(primary_key=True)
     title = models.TextField()
     description = models.TextField()
     img = models.TextField()
-    cost = models.IntegerField()
+    cost = models.FloatField()
 
     class Meta:
         managed = False
-        db_table = 'card'
-        app_label = 'bmstu_lab'
+        db_table = 'service'
+
+
+class Order(models.Model):
+    order_id: models.IntegerField(primary_key=True)
+    status = models.TextField()
+    created = models.DateTimeField()
+    activated = models.DateTimeField()
+    completed = models.DateTimeField()
+    creator_id = models.TextField()
+    moderator_id = models.TextField()
+
+    class Meta:
+        managed = False
+        db_table = 'order'
+
+
+class User(models.Model):
+    user_id = models.IntegerField(primary_key=True)
+    login = models.TextField()
+    password = models.TextField()
+    admin = models.BooleanField(default=False)
+
+    class Meta:
+        managed = False
+        db_table = 'user'
+
+
+class OrderEvent(models.Model):
+    order_id = models.IntegerField(),
+    service_id = models.IntegerField(),
+
+    class Meta:
+        managed = False
+        db_table = 'order_event'
+
 
 # card1 = Card.objects.create(title='Обработка помещений после ковида', description='Дэзинфекция объектов', img='./img/1.png',
 #                             cost=50500, id=1)
