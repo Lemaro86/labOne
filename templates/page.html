@@ -5,7 +5,7 @@
 {% block content %}
     <div class="space">
         {% include 'header.html' %}
-        
+
         <h1 class="details-title">{{ data.title }}</h1>
 
         <div class="card card-details">
@@ -15,7 +15,7 @@
             <div class="content">
                 <div class="content-top">
                     <p class="title">{{ data.title }}</p>
-                    <p class="desc">{{ data.desc }}</p>
+                    <p class="desc">{{ data.description }}</p>
                 </div>
                 <div class="control">
                     <p class="cost"><b>{{ data.cost }}</b> ₽</p>
@@ -24,8 +24,5 @@
 
             </div>
         </div>
-        <br/>
-        <br/>
-        Data.id: <b> {{ data.id }} </b>
     </div>
 {% endblock %}
