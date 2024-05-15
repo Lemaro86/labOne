@@ -12,6 +12,9 @@ class Service(models.Model):
         managed = False
         db_table = 'service'
 
+    def __str__(self):
+        return f'{self.title} -- {self.cost}'
+
 
 class Order(models.Model):
     order_id: models.IntegerField(primary_key=True)
